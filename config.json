@@ -1,0 +1,149 @@
+{
+  "personal": {
+    "name": "谢明 (Bruce Xie)",
+    "title": "AI Agent Algorithm Engineer | RAG & LLM Specialist",
+    "avatar": "https://avatars.githubusercontent.com/u/32125213?v=4",
+    "location": "Shanghai, China (上海市徐汇区)",
+    "bio": "Master's in Computer Science from Fudan University. Specialized in RAG systems, LLM applications, and reinforcement learning. Proven track record in reducing AI hallucinations by 73% and improving system accuracy by 37%.",
+    "email": "xieminghack@163.com",
+    "phone": "+86-15801727976",
+    "github": "https://github.com/1998x-stack",
+    "linkedin": "https://linkedin.com/in/yourprofile",
+    "website": "https://1998x-stack.github.io"
+  },
+  "skills": {
+    "languages": ["Python", "C++", "Java", "SQL", "JavaScript", "Shell"],
+    "frameworks": ["PyTorch", "TensorFlow", "LangChain", "LlamaIndex", "Ray", "FastAPI", "Django", "React"],
+    "tools": ["Git", "Docker", "Kubernetes", "Milvus", "Elasticsearch", "Redis", "AWS", "Linux"],
+    "areas": [
+      "Large Language Models (LLM)",
+      "Retrieval-Augmented Generation (RAG)",
+      "Machine Learning & Deep Learning",
+      "Reinforcement Learning",
+      "Computer Vision",
+      "Natural Language Processing",
+      "Distributed Systems",
+      "Algorithm Strategy & Optimization"
+    ]
+  },
+  "experience": [
+    {
+      "company": "智慧树 (Zhihuishu)",
+      "position": "AI Agent Algorithm Engineer",
+      "duration": "2023.07 - 2025.12",
+      "location": "Shanghai, China",
+      "achievements": [
+        "RAG System Development: Built end-to-end pipeline with Query Understanding → Retrieval → Re-ranking → Generation → Self-Verification. Reduced hallucinations by 73% and improved Hit@5 accuracy by 37% compared to Naive RAG",
+        "Knowledge Base Engineering: Developed document processing pipeline (parsing/OCR → cleansing → semantic chunking → embedding → indexing) for university and enterprise data. Achieved 27% improvement in MRR with 131ms P95 latency using hybrid Milvus + BM25 retrieval",
+        "Generation Optimization: Created prompt template library for customer service, reports, and FAQs. Implemented answer-context similarity checks, self-consistency verification, and risk filtering for traceable outputs",
+        "Query Understanding: Designed intent classification, NER extraction, and query rewriting/expansion modules with multi-turn coreference resolution",
+        "Hybrid Retrieval: Implemented Dense + BM25 hybrid recall strategy with BGE re-ranking and metadata filtering (source, time, type)"
+      ]
+    },
+    {
+      "company": "美团 (Meituan)",
+      "position": "Algorithm Strategy Engineer",
+      "duration": "2023.01 - 2023.07",
+      "location": "Beijing, China",
+      "achievements": [
+        "End-to-End Intelligence Optimization: Analyzed user behavior (view, click, add-to-cart) for in-store dishes. Built new recall pipeline, increasing in-box term UV_CTR by 13% and search DAU by 0.08%",
+        "Term Service Chain Optimization: Applied sample attribution and other optimization techniques, improving in-box term UV_CTR by 2.07%, search discovery UV_CTR by 0.33%, and search DAU by 0.07%",
+        "Data Analysis: Collected and analyzed large-scale user behavior data to optimize recommendation and search strategies"
+      ]
+    }
+  ],
+  "internships": [
+    {
+      "company": "粤港澳大湾区数字经济研究院 (IDEA - International Digital Economy Academy)",
+      "position": "Intelligent Optimization Algorithm Engineer",
+      "duration": "2022.09 - 2022.12",
+      "location": "Shenzhen, China",
+      "achievements": [
+        "Automated Road Design: Preprocessed engineering drawings, constructed Minkowski Sum expanded polygonal regions, performed triangulation on feasible road areas, and used Medial Axis algorithm for global road design optimization"
+      ]
+    },
+    {
+      "company": "上海跳跃网络有限公司 (Shanghai Jump Network Technology)",
+      "position": "Reinforcement Learning Research Assistant",
+      "duration": "2022.01 - 2022.06",
+      "location": "Shanghai, China",
+      "achievements": [
+        "PPO Distributed Architecture: Built scalable PPO framework for MOBA games with Beta-distributed outputs, custom optimizer for Non-IID data, and specialized loss function for multi-continuous action spaces",
+        "Performance Optimization: Decoupled sampler, memory, and trainer components to enhance scalability. Reduced training time from 13 hours to under 2 hours in MicroRTS environment (85% reduction)",
+        "Achieved super-human performance in reinforcement learning for MOBA game domain"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "复旦大学 (Fudan University)",
+      "degree": "Master's Degree",
+      "major": "Computer Science",
+      "duration": "2020.09 - 2023.01",
+      "location": "Shanghai, China",
+      "gpa": "",
+      "courses": [
+        "Deep Learning",
+        "Reinforcement Learning",
+        "Computer Vision",
+        "Pattern Recognition",
+        "Image Processing",
+        "Signals and Systems",
+        "Applied Numerical Analysis",
+        "Statistics"
+      ],
+      "honors": []
+    },
+    {
+      "school": "同济大学 (Tongji University)",
+      "degree": "Bachelor's Degree",
+      "major": "Civil Engineering (Bridge Engineering)",
+      "duration": "2015.09 - 2019.06",
+      "location": "Shanghai, China",
+      "gpa": "",
+      "courses": [
+        "Linear Algebra",
+        "Data Structures",
+        "Probability Theory",
+        "Elastic Mechanics",
+        "Structural Mechanics",
+        "Fluid Mechanics"
+      ],
+      "honors": []
+    },
+    {
+      "school": "临川二中 (Linchuan No.2 High School)",
+      "degree": "High School Diploma",
+      "major": "Science Track",
+      "duration": "2012.09 - 2015.06",
+      "location": "Jiangxi Province, China",
+      "gpa": "",
+      "courses": [],
+      "honors": [
+        "Gaokao: Ranked top 600+ in Jiangxi Province",
+        "First Prize - Jiangxi Provincial Mathematics Competition (self-studied)"
+      ]
+    }
+  ],
+  "featuredProjects": [
+    "deep_learning",
+    "python_projects",
+    "algorithms",
+    "COMP90024-Cluster-and-Cloud-Computing-Assignment-2",
+    "reinforcement_learning"
+  ],
+  "projectFilters": {
+    "excludeForks": false,
+    "minStars": 0,
+    "categories": {
+      "AI/ML": ["machine-learning", "deep-learning", "neural-network", "pytorch", "tensorflow", "ai", "ml"],
+      "NLP/LLM": ["nlp", "llm", "language-model", "bert", "gpt", "transformer", "rag"],
+      "Computer Vision": ["computer-vision", "cv", "image", "opencv", "detection", "segmentation"],
+      "Reinforcement Learning": ["reinforcement-learning", "rl", "dqn", "ppo", "policy-gradient"],
+      "Algorithms": ["algorithm", "data-structure", "leetcode", "competitive-programming"],
+      "Web Development": ["web", "frontend", "backend", "api", "django", "react", "flask"],
+      "Data Science": ["data-science", "analysis", "visualization", "pandas", "numpy"],
+      "Tools & Utilities": ["tool", "utility", "cli", "automation", "script"]
+    }
+  }
+}
