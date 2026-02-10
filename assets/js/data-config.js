@@ -12,9 +12,34 @@ window.resumeConfig = {
     "website": "https://1998x-stack.github.io"
   },
   "skills": {
-    "languages": ["Python", "C++", "Java", "SQL", "JavaScript", "Shell"],
-    "frameworks": ["PyTorch", "TensorFlow", "LangChain", "LlamaIndex", "Ray", "FastAPI", "Django", "React"],
-    "tools": ["Git", "Docker", "Kubernetes", "Milvus", "Elasticsearch", "Redis", "AWS", "Linux"],
+    "languages": [
+      "Python",
+      "C++",
+      "Java",
+      "SQL",
+      "JavaScript",
+      "Shell"
+    ],
+    "frameworks": [
+      "PyTorch",
+      "TensorFlow",
+      "LangChain",
+      "LlamaIndex",
+      "Ray",
+      "FastAPI",
+      "Django",
+      "React"
+    ],
+    "tools": [
+      "Git",
+      "Docker",
+      "Kubernetes",
+      "Milvus",
+      "Elasticsearch",
+      "Redis",
+      "AWS",
+      "Linux"
+    ],
     "areas": [
       "Large Language Models (LLM)",
       "Retrieval-Augmented Generation (RAG)",
@@ -136,14 +161,68 @@ window.resumeConfig = {
     "excludeForks": false,
     "minStars": 0,
     "categories": {
-      "AI/ML": ["machine-learning", "deep-learning", "neural-network", "pytorch", "tensorflow", "ai", "ml"],
-      "NLP/LLM": ["nlp", "llm", "language-model", "bert", "gpt", "transformer", "rag"],
-      "Computer Vision": ["computer-vision", "cv", "image", "opencv", "detection", "segmentation"],
-      "Reinforcement Learning": ["reinforcement-learning", "rl", "dqn", "ppo", "policy-gradient"],
-      "Algorithms": ["algorithm", "data-structure", "leetcode", "competitive-programming"],
-      "Web Development": ["web", "frontend", "backend", "api", "django", "react", "flask"],
-      "Data Science": ["data-science", "analysis", "visualization", "pandas", "numpy"],
-      "Tools & Utilities": ["tool", "utility", "cli", "automation", "script"]
+      "AI/ML": [
+        "machine-learning",
+        "deep-learning",
+        "neural-network",
+        "pytorch",
+        "tensorflow",
+        "ai",
+        "ml"
+      ],
+      "NLP/LLM": [
+        "nlp",
+        "llm",
+        "language-model",
+        "bert",
+        "gpt",
+        "transformer",
+        "rag"
+      ],
+      "Computer Vision": [
+        "computer-vision",
+        "cv",
+        "image",
+        "opencv",
+        "detection",
+        "segmentation"
+      ],
+      "Reinforcement Learning": [
+        "reinforcement-learning",
+        "rl",
+        "dqn",
+        "ppo",
+        "policy-gradient"
+      ],
+      "Algorithms": [
+        "algorithm",
+        "data-structure",
+        "leetcode",
+        "competitive-programming"
+      ],
+      "Web Development": [
+        "web",
+        "frontend",
+        "backend",
+        "api",
+        "django",
+        "react",
+        "flask"
+      ],
+      "Data Science": [
+        "data-science",
+        "analysis",
+        "visualization",
+        "pandas",
+        "numpy"
+      ],
+      "Tools & Utilities": [
+        "tool",
+        "utility",
+        "cli",
+        "automation",
+        "script"
+      ]
     }
   }
 };

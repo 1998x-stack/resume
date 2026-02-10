@@ -61,39 +61,31 @@ function updateThemeIcon(theme) {
 
 // ==================== Data Loading ====================
 async function loadConfig() {
-    try {
-        // Try loading from window (embedded data)
-        if (window.resumeConfig) {
-            config = window.resumeConfig;
-            return;
-        }
-        // Fallback to fetch for backwards compatibility
-        const response = await fetch('config.json');
-        config = await response.json();
-    } catch (error) {
-        console.error('Error loading config:', error);
-        // Use default config
-        config = getDefaultConfig();
+    // Use embedded data (loaded from data-config.js)
+    if (window.resumeConfig) {
+        config = window.resumeConfig;
+        console.log('✅ Config loaded successfully');
+        return;
     }
+
+    // Fallback: use default config
+    console.warn('⚠️ Using default config - data file not loaded');
+    config = getDefaultConfig();
 }
 
 async function loadRepos() {
-    try {
-        // Try loading from window (embedded data)
-        if (window.resumeRepos) {
-            repos = window.resumeRepos;
-            filteredRepos = [...repos];
-            return;
-        }
-        // Fallback to fetch for backwards compatibility
-        const response = await fetch('repos.json');
-        repos = await response.json();
+    // Use embedded data (loaded from data-repos.js)
+    if (window.resumeRepos) {
+        repos = window.resumeRepos;
         filteredRepos = [...repos];
-    } catch (error) {
-        console.error('Error loading repos:', error);
-        repos = [];
-        filteredRepos = [];
+        console.log(`✅ Loaded ${repos.length} repositories`);
+        return;
     }
+
+    // Fallback: empty array
+    console.warn('⚠️ No repositories loaded');
+    repos = [];
+    filteredRepos = [];
 }
 
 function getDefaultConfig() {
@@ -101,7 +93,7 @@ function getDefaultConfig() {
         personal: {
             name: "Your Name",
             title: "Software Engineer",
-            avatar: "https://via.placeholder.com/150",
+            avatar: "https://avatars.githubusercontent.com/u/0?v=4",
             location: "Location",
             bio: "Your bio here",
             email: "email@example.com",
