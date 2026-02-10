@@ -6,7 +6,14 @@
 PORT=8000
 
 echo "🚀 Starting local web server..."
-echo "📄 Your resume will be available at: http://localhost:$PORT"
+echo ""
+echo "📄 Your resume will be available at:"
+echo ""
+echo "   English: http://localhost:$PORT/resume/"
+echo "   Chinese: http://localhost:$PORT/resume/zh/"
+echo ""
+echo "⚠️  NOTE: Use /resume/ in the URL (matches GitHub Pages structure)"
+echo ""
 echo "🛑 Press Ctrl+C to stop the server"
 echo ""
 
@@ -17,6 +24,6 @@ elif command -v python &> /dev/null; then
     python -m http.server $PORT
 else
     echo "❌ Error: Python is not installed"
-    echo "Please install Python or open index.html directly in your browser"
+    echo "Please install Python or open resume/index.html directly in your browser"
     exit 1
 fi

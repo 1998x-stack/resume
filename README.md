@@ -1,271 +1,272 @@
-# GitHub Pages Resume
+# Bruce Xie (谢明) - Resume Website
 
-A modern, interactive resume website built with vanilla HTML, CSS, and JavaScript. Features dynamic project loading from your GitHub repositories and dark/light theme support.
+[![Deploy](https://github.com/1998x-stack/resume/actions/workflows/deploy.yml/badge.svg)](https://github.com/1998x-stack/resume/actions/workflows/deploy.yml)
 
-## Features
+A modern, bilingual (English/Chinese) resume website with minimalist design. Features dynamic project loading from GitHub, responsive layout, and dark/light themes.
 
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
-- **Dark/Light Mode**: Toggle between themes with persistent storage
-- **Dynamic Projects**: Automatically loads your GitHub repositories
-- **Project Filtering**: Filter by category, search by keyword, include/exclude forks and archived repos
-- **Modern UI**: Clean, professional design with smooth animations
-- **Easy Customization**: Simple JSON configuration file
-- **GitHub Pages Ready**: Deploy in minutes
+## 🌐 Live Demo
 
-## Quick Start
+- **English**: https://1998x-stack.github.io/resume/
+- **中文**: https://1998x-stack.github.io/resume/zh/
 
-### 1. Update Your Personal Information
+## ✨ Features
 
-Edit `config.json` to add your personal information, skills, experience, and education:
+- **Bilingual Support**: English and Chinese versions with easy language switching
+- **Minimalist Design**: Clean, professional, content-focused layout (经典极简)
+- **Dark/Light Themes**: Toggle between themes with persistent storage
+- **Dynamic Projects**: Automatically loads 100+ GitHub repositories
+- **Advanced Filtering**: Filter by category, search, stars, forks, and archived status
+- **Responsive Design**: Works perfectly on mobile, tablet, and desktop
+- **Auto-Deployment**: GitHub Actions workflow for automatic deployment
+- **SEO Optimized**: Proper meta tags and semantic HTML
+- **Print-Ready**: Optimized styles for printing
 
-```json
-{
-  "personal": {
-    "name": "Your Name",
-    "title": "Your Title",
-    "email": "your.email@example.com",
-    ...
-  },
-  "skills": {
-    "languages": ["Python", "JavaScript", ...],
-    ...
-  },
-  "experience": [...],
-  "education": [...]
-}
+## 📁 Project Structure
+
+```
+resume/
+├── index.html                    # Root redirect page
+├── resume/
+│   ├── index.html               # English resume
+│   └── zh/
+│       └── index.html           # Chinese resume (中文简历)
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css            # Minimalist design stylesheet
+│   ├── js/
+│   │   ├── script.js            # Main resume logic
+│   │   ├── data-config.js       # English personal data
+│   │   ├── data-config-zh.js    # Chinese personal data
+│   │   └── data-repos.js        # GitHub projects data
+│   └── data/
+│       ├── config.json          # English source config
+│       ├── config-zh.json       # Chinese source config
+│       └── repos.json           # Full projects data
+│
+├── scripts/
+│   ├── update-repos.sh          # Update GitHub repositories
+│   ├── preview.sh               # Local preview server
+│   └── test-local.sh            # Interactive testing
+│
+├── docs/
+│   ├── SETUP.md                 # Complete setup guide
+│   ├── DEPLOY.md                # Deployment instructions
+│   └── ...                      # Other documentation
+│
+└── .github/
+    └── workflows/
+        └── deploy.yml           # GitHub Actions deployment
 ```
 
-### 2. Update Repository Data
+## 🚀 Quick Start
 
-To refresh your GitHub repositories:
+### Option 1: Direct File Opening (Fastest)
+
+The website works directly in your browser without a server:
 
 ```bash
-curl -s "https://api.github.com/users/YOUR_USERNAME/repos" -o repos.json
+# Navigate to project directory
+cd /Users/mx/Desktop/xieMing
+
+# Open English version
+open resume/index.html
+
+# Open Chinese version
+open resume/zh/index.html
 ```
 
-Replace `YOUR_USERNAME` with your GitHub username.
-
-### 3. Deploy to GitHub Pages
-
-#### Option A: Using a New Repository
-
-1. Create a new repository named `YOUR_USERNAME.github.io`
-2. Push all files to this repository:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit: GitHub Pages resume"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git
-   git push -u origin main
-   ```
-3. Your resume will be available at `https://YOUR_USERNAME.github.io`
-
-#### Option B: Using GitHub Pages from Any Repository
-
-1. Create a new repository (e.g., `resume`)
-2. Push all files to the repository
-3. Go to repository Settings → Pages
-4. Under "Source", select "Deploy from a branch"
-5. Select `main` branch and `/ (root)` folder
-6. Click Save
-7. Your resume will be available at `https://YOUR_USERNAME.github.io/resume`
-
-## File Structure
-
-```
-.
-├── index.html          # Main HTML structure
-├── style.css           # Styling and themes
-├── script.js           # Dynamic functionality
-├── config.json         # Your personal information (EDIT THIS)
-├── repos.json          # GitHub repositories data (auto-generated)
-└── README.md          # This file
-```
-
-## Customization Guide
-
-### Personal Information
-
-Edit the `personal` section in `config.json`:
-
-- `name`: Your full name
-- `title`: Your professional title
-- `avatar`: Link to your profile picture (GitHub avatar by default)
-- `bio`: Short description about yourself
-- `email`, `github`, `linkedin`, `website`: Contact links
-
-### Skills
-
-Update the `skills` section with your technical abilities:
-
-```json
-"skills": {
-  "languages": ["Python", "JavaScript", "C++"],
-  "frameworks": ["React", "Django", "PyTorch"],
-  "tools": ["Git", "Docker", "AWS"],
-  "areas": ["Machine Learning", "Web Development"]
-}
-```
-
-### Work Experience
-
-Add your work history in the `experience` array:
-
-```json
-"experience": [
-  {
-    "company": "Company Name",
-    "position": "Your Position",
-    "duration": "2020.01 - Present",
-    "location": "City, Country",
-    "achievements": [
-      "Achievement with quantifiable results",
-      "Technical impact you made",
-      "Leadership or innovation example"
-    ]
-  }
-]
-```
-
-### Education
-
-Add your educational background:
-
-```json
-"education": [
-  {
-    "school": "University Name",
-    "degree": "Bachelor's/Master's/Ph.D.",
-    "major": "Your Major",
-    "duration": "2015 - 2019",
-    "honors": ["Honor 1", "Honor 2"]
-  }
-]
-```
-
-### Featured Projects
-
-Highlight specific repositories by adding their names to `featuredProjects`:
-
-```json
-"featuredProjects": [
-  "awesome-project",
-  "important-repo",
-  "showcase-work"
-]
-```
-
-### Project Categories
-
-Define categories for filtering projects:
-
-```json
-"projectFilters": {
-  "categories": {
-    "AI/ML": ["machine-learning", "deep-learning", "neural-network"],
-    "Web Development": ["web", "frontend", "backend"],
-    "Tools": ["tool", "cli", "utility"]
-  }
-}
-```
-
-## Updating Your Resume
-
-### Update Repositories
-
-Run this command to fetch your latest repositories:
+### Option 2: Local Server (Recommended - Tests Full Structure)
 
 ```bash
-curl -s "https://api.github.com/users/YOUR_USERNAME/repos" -o repos.json
+# Clone the repository (if you don't have it)
+git clone https://github.com/1998x-stack/resume.git
+cd resume
+
+# IMPORTANT: Run server from PROJECT ROOT
+python3 -m http.server 8000
+
+# Then visit these URLs:
+# English: http://localhost:8000/resume/
+# Chinese: http://localhost:8000/resume/zh/
+# (Note: Must include /resume/ in URL!)
 ```
 
-### Update Personal Info
+**⚠️ Common Mistake**: Don't run the server from inside `resume/` directory - always from project root!
 
-Edit `config.json` with your latest information.
-
-### Deploy Changes
+### Option 3: Interactive Testing (Best for Beginners)
 
 ```bash
-git add .
-git commit -m "Update resume"
-git push
+cd /Users/mx/Desktop/xieMing
+./scripts/test-local.sh
 ```
 
-Changes will be live in a few minutes.
+This script checks everything and guides you through testing.
 
-## Advanced Customization
+## 📝 Customization
 
-### Colors
+### Update Personal Information
 
-Edit CSS variables in `style.css` under `:root` and `[data-theme="dark"]` to customize colors:
+Edit the config files:
+
+```bash
+# English
+nano assets/data/config.json
+
+# Chinese
+nano assets/data/config-zh.json
+
+# Regenerate JavaScript data files
+echo "window.resumeConfig = $(cat assets/data/config.json);" > assets/js/data-config.js
+echo "window.resumeConfig = $(cat assets/data/config-zh.json);" > assets/js/data-config-zh.js
+```
+
+### Update Projects
+
+```bash
+./scripts/update-repos.sh
+```
+
+### Customize Colors
+
+Edit `assets/css/style.css`:
 
 ```css
 :root {
-  --accent-primary: #0066cc;  /* Change primary color */
-  --accent-secondary: #0052a3;
-  ...
+    --accent: #3498db;  /* Change to your brand color */
 }
 ```
 
-### Adding Sections
+## 🎨 Design Philosophy
 
-You can add new sections by:
-1. Adding HTML in `index.html`
-2. Adding styles in `style.css`
-3. Adding data to `config.json`
-4. Adding rendering logic in `script.js`
+This resume follows the **Minimalist Classic** (经典极简) design principles:
 
-## Tips for Best Results
+- **Clear Layout**: 900px max-width, centered content
+- **Strong Spacing**: Consistent spatial hierarchy
+- **High Readability**: 1.8 line-height, serif headings
+- **Professional**: Content-first, minimal decoration
+- **Accessible**: WCAG compliant, keyboard navigable
 
-1. **Keep Projects Updated**: Regularly refresh your `repos.json`
-2. **Write Good Descriptions**: Ensure your GitHub repos have clear descriptions
-3. **Use Topics**: Add relevant topics to your GitHub repos for better categorization
-4. **Quantify Achievements**: Use numbers and metrics in your experience section
-5. **Professional Photo**: Use a high-quality, professional profile picture
-6. **Regular Updates**: Keep your resume current with your latest work
+### Color Palette
 
-## Troubleshooting
+**Light Theme:**
+- Background: `#ffffff`
+- Text: `#2c3e50`
+- Accent: `#3498db`
 
-### Projects Not Loading
+**Dark Theme:**
+- Background: `#1a1a1a`
+- Text: `#e8e8e8`
+- Accent: `#5dade2`
 
-- Check that `repos.json` exists and is valid JSON
-- Open browser console (F12) to see any errors
-- Ensure the file is properly formatted
+## 🛠️ Technology Stack
 
-### Personal Info Not Showing
+- **HTML5**: Semantic markup
+- **CSS3**: Custom properties, Flexbox, Grid
+- **JavaScript**: Vanilla ES6+
+- **Icons**: Font Awesome 6.4
+- **Deployment**: GitHub Pages + Actions
+- **CI/CD**: Automated with GitHub Actions
 
-- Verify `config.json` is valid JSON
-- Check for syntax errors (missing commas, quotes, etc.)
-- Use a JSON validator: https://jsonlint.com/
+## 📦 Deployment
 
-### GitHub Pages Not Working
+### Deploy to GitHub Pages
 
-- Ensure repository name is correct for user pages (`USERNAME.github.io`)
-- Check that GitHub Pages is enabled in repository settings
-- Wait a few minutes after pushing for changes to go live
-- Check the Pages build status in repository Actions tab
+1. **Fork or Clone** this repository
 
-## Browser Support
+2. **Push to GitHub**:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit: Bilingual resume"
+   git branch -M main
+   git remote add origin https://github.com/1998x-stack/resume.git
+   git push -u origin main
+   ```
 
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+3. **Enable GitHub Pages**:
+   - Go to repository **Settings** → **Pages**
+   - Source: Select **GitHub Actions**
+   - Wait 1-2 minutes for deployment
 
-## License
+4. **Visit your resume**:
+   - English: `https://1998x-stack.github.io/resume/`
+   - Chinese: `https://1998x-stack.github.io/resume/zh/`
+
+## 🔄 Updating Your Resume
+
+### Update Personal Info
+
+```bash
+# Edit configs
+nano assets/data/config.json
+nano assets/data/config-zh.json
+
+# Regenerate JS files
+./scripts/update-configs.sh  # (create this helper script)
+
+# Commit and push
+git add assets/
+git commit -m "Update personal information"
+git push
+```
+
+### Update Projects
+
+```bash
+# Fetch latest repos
+./scripts/update-repos.sh
+
+# Commit and push
+git add assets/
+git commit -m "Update GitHub projects"
+git push
+```
+
+Changes go live in 1-2 minutes after pushing!
+
+## 📊 Key Achievements Showcased
+
+- **73% Hallucination Reduction** in RAG systems
+- **37% Accuracy Improvement** (Hit@5)
+- **27% MRR Improvement** in retrieval
+- **85% Training Time Reduction** (RL optimization)
+- **13% UV_CTR Increase** at Meituan
+
+## 🎯 Professional Experience
+
+- **Zhihuishu** - AI Agent Algorithm Engineer (2023.07-2025.12)
+- **Meituan** - Algorithm Strategy Engineer (2023.01-2023.07)
+- **IDEA** - Intelligent Optimization Algorithm Engineer (2022.09-2022.12)
+- **Shanghai Jump Network** - RL Research Assistant (2022.01-2022.06)
+
+## 🎓 Education
+
+- **Fudan University** - Master's in Computer Science (2020-2023)
+- **Tongji University** - Bachelor's in Civil Engineering (2015-2019)
+
+## 💻 Tech Stack
+
+**Languages**: Python, C++, Java, SQL, JavaScript, Shell
+**Frameworks**: PyTorch, TensorFlow, LangChain, LlamaIndex, Ray, FastAPI
+**Tools**: Git, Docker, Kubernetes, Milvus, Elasticsearch, Redis, AWS
+
+## 📄 License
 
 Feel free to use this template for your own resume. Attribution appreciated but not required.
 
-## Credits
+## 🤝 Contributing
 
-Built with:
-- Font Awesome for icons
-- GitHub API for repository data
-- Vanilla JavaScript (no frameworks required!)
+Suggestions and improvements are welcome! Please open an issue or submit a pull request.
+
+## 📧 Contact
+
+- **GitHub**: [@1998x-stack](https://github.com/1998x-stack)
+- **Email**: xieminghack@163.com
+- **Website**: https://1998x-stack.github.io/resume/
 
 ---
 
-**Happy job hunting!** 🚀
+**Built with ❤️ using vanilla JavaScript and modern CSS**
 
-If you found this useful, consider starring the repository!
+If you found this useful, please ⭐ star the repository!

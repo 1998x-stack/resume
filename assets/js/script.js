@@ -62,6 +62,12 @@ function updateThemeIcon(theme) {
 // ==================== Data Loading ====================
 async function loadConfig() {
     try {
+        // Try loading from window (embedded data)
+        if (window.resumeConfig) {
+            config = window.resumeConfig;
+            return;
+        }
+        // Fallback to fetch for backwards compatibility
         const response = await fetch('config.json');
         config = await response.json();
     } catch (error) {
@@ -73,6 +79,13 @@ async function loadConfig() {
 
 async function loadRepos() {
     try {
+        // Try loading from window (embedded data)
+        if (window.resumeRepos) {
+            repos = window.resumeRepos;
+            filteredRepos = [...repos];
+            return;
+        }
+        // Fallback to fetch for backwards compatibility
         const response = await fetch('repos.json');
         repos = await response.json();
         filteredRepos = [...repos];
@@ -116,16 +129,42 @@ function getDefaultConfig() {
 function renderPersonalInfo() {
     const { personal } = config;
 
-    document.getElementById('avatar').src = personal.avatar;
-    document.getElementById('name').textContent = personal.name;
-    document.getElementById('footer-name').textContent = personal.name;
-    document.getElementById('title').textContent = personal.title;
-    document.getElementById('bio').textContent = personal.bio;
+    // Set avatar and basic info
+    const avatar = document.getElementById('avatar');
+    const name = document.getElementById('name');
+    const footerName = document.getElementById('footer-name');
+    const title = document.getElementById('title');
+    const bio = document.getElementById('bio');
 
-    document.getElementById('github-link').href = personal.github;
-    document.getElementById('email-link').href = `mailto:${personal.email}`;
-    document.getElementById('linkedin-link').href = personal.linkedin;
-    document.getElementById('location').querySelector('span').textContent = personal.location;
+    if (avatar) avatar.src = personal.avatar;
+    if (name) name.textContent = personal.name;
+    if (footerName) footerName.textContent = personal.name;
+    if (title) title.textContent = personal.title;
+    if (bio) bio.textContent = personal.bio;
+
+    // Set contact links (with null checks)
+    const githubLink = document.getElementById('github-link');
+    const emailLink = document.getElementById('email-link');
+    const linkedinLink = document.getElementById('linkedin-link');
+    const locationSpan = document.getElementById('location');
+
+    if (githubLink) githubLink.href = personal.github;
+    if (emailLink) emailLink.href = `mailto:${personal.email}`;
+
+    // Show LinkedIn only if URL is provided and valid
+    if (linkedinLink) {
+        if (personal.linkedin && personal.linkedin !== '#' && !personal.linkedin.includes('yourprofile')) {
+            linkedinLink.href = personal.linkedin;
+            linkedinLink.style.display = '';
+        } else {
+            linkedinLink.style.display = 'none';
+        }
+    }
+
+    if (locationSpan) {
+        const span = locationSpan.querySelector('span');
+        if (span) span.textContent = personal.location;
+    }
 
     // Update page title
     document.title = `${personal.name} - Resume`;
